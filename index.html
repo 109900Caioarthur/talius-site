@@ -2,33 +2,172 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Talius - Desenvolvimento Pessoal</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f2f2f2;
-      padding: 30px;
-    }
-    h1 {
+      margin: 0; padding: 0;
+      background: #f9f9f9;
       color: #333;
+      line-height: 1.6;
     }
-    .qr-code {
-      margin-top: 20px;
+    header {
+      background-color: #3b82f6;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
     }
-    img {
-      width: 200px;
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      background: #2563eb;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #1e40af;
+    }
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    section {
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    h2 {
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background: #e0e7ff;
+      color: #1e40af;
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+    /* Responsividade simples */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        padding: 12px;
+        border-top: 1px solid #1e40af;
+      }
+      nav a:first-child {
+        border-top: none;
+      }
+      main {
+        margin: 10px;
+        padding: 10px;
+      }
+    }
+    /* Estilo do botão */
+    .btn-comprar {
+      display: inline-block;
+      background-color: #2563eb;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+    .btn-comprar:hover {
+      background-color: #1e40af;
+    }
+    /* Pix oculto inicialmente */
+    #pix-info {
+      margin-top: 15px;
+      padding: 15px;
+      background: #e0e7ff;
+      border: 1px solid #2563eb;
+      border-radius: 5px;
+      display: none;
+      font-weight: bold;
+      color: #2563eb;
+      word-break: break-word;
     }
   </style>
 </head>
 <body>
-  <h1>Bem-vindo à Talius</h1>
-  <p>Invista no seu crescimento pessoal com nossos cursos exclusivos.</p>
-  <h2>Faça o pagamento via Pix</h2>
-  <p>Chave Pix: <strong>018.507.542-84</strong></p>
-  <div class="qr-code">
-    <img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=01850754284" alt="QR Code Pix">
-  </div>
+  <header>
+    <h1>Talius</h1>
+    <p>Cursos de Desenvolvimento Pessoal para transformar sua vida</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#cursos">Cursos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre</h2>
+      <p>O Talius oferece cursos focados em desenvolvimento pessoal, autoconhecimento, e habilidades para o sucesso na vida e no trabalho. Nossos conteúdos são práticos, dinâmicos e pensados para você evoluir no seu ritmo.</p>
+    </section>
+
+    <section id="cursos">
+      <h2>Cursos</h2>
+      <ul>
+        <li>Autoconfiança e Autoestima</li>
+        <li>Gestão do Tempo e Produtividade</li>
+        <li>Comunicação Eficaz</li>
+        <li>Mindfulness e Controle do Estresse</li>
+      </ul>
+      <p>Para adquirir qualquer curso, clique no botão abaixo para obter a chave Pix para pagamento.</p>
+      <button class="btn-comprar" onclick="mostrarPix()">Comprar Curso</button>
+      <div id="pix-info">Pix: 018.507.542-84</div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Quer saber mais? Entre em contato conosco:</p>
+      <ul>
+        <li>Email: contato@talius.com (exemplo)</li>
+        <li>Telefone: (11) 99999-9999 (exemplo)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Talius - Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function mostrarPix() {
+      const pixDiv = document.getElementById('pix-info');
+      if (pixDiv.style.display === 'none' || pixDiv.style.display === '') {
+        pixDiv.style.display = 'block';
+      } else {
+        pixDiv.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
